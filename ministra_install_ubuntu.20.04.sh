@@ -9,7 +9,7 @@ apt-get install net-tools -y
 VERSION="5.6.8"
 TIME_ZONE="Europe/London" #
 mysql_root_password="test123456"
-repository="https://od.lk/fl/NjVfMTE3NjgyMTBf"
+repository="http://84.64.252.180/stalker"
 
 # SET LOCALE TO UTF-8
 function setLocale {
