@@ -47,7 +47,7 @@ apt update -y
 
 echo -e " \e[32mInstalling required packages\e[0m"
 sleep 3
-apt install -y nginx apache2 php8.2 php8.2-cli php8.2-common php8.2-xml php8.2-mbstring php8.2-curl php8.2-zip php8.2-mysql php8.2-soap php8.2-intl php8.2-bcmath memcached php8.2-memcached nodejs npm unzip
+apt install -y nginx apache2 php8.2 php8.2-cli php8.2-common php8.2-xml php8.2-mbstring php8.2-curl php8.2-zip php8.2-mysql php8.2-soap php8.2-intl php8.2-bcmath memcached php8.2-memcached nodejs npm unzip composer
 
 systemctl stop nginx apache2
 
@@ -103,11 +103,17 @@ chmod 777 /var/www/.npm
 cd /var/www/html/stalker_portal/server
 wget -O custom.ini $REPOSITORY/custom.ini
 
+# Install Phing
+composer global require phing/phing
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
 # Build Ministra Portal
 cd /var/www/html/stalker_portal/deploy
 sed -i 's/php5enmod/phpenmod/g' build.xml
 sed -i 's/php5dismod/phpdismod/g' build.xml
-phing
+~/.config/composer/vendor/bin/phing
 
 # Output Completion Info
 echo -e " \e[32mInstallation Complete!\e[0m"
