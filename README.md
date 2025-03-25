@@ -1,10 +1,10 @@
-# Ministra install on Ubuntu 20.04 LTS / 18.04 LTS
-Ministra Portal auto install script on Ubuntu 20.04 LTS / 18.04 LTS
+# Ministra install on Ubuntu 24.04 LTS
+Ministra Portal auto install script on Ubuntu 24.04 LTS
 
 ##### Runs on
 [![Ubuntu](https://user-images.githubusercontent.com/12951085/139538206-833d8d33-0d1b-4d51-8ec8-86e5cf14f82e.png)](https://www.ubuntu.com)
 
-This script work only on Clean Ubuntu 20.04 LTS / 18.04 LTS
+Still Testing 
 
 Ministra auto install script
   * Version of Ministra 5.6.8
