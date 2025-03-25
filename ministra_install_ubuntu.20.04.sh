@@ -113,6 +113,7 @@ source ~/.bashrc
 cd /var/www/html/stalker_portal/deploy
 sed -i 's/php5enmod/phpenmod/g' build.xml
 sed -i 's/php5dismod/phpdismod/g' build.xml
+sed -i 's/command=/executable=/g' build.xml  # Fix Phing execTask error
 ~/.config/composer/vendor/bin/phing
 
 # Output Completion Info
