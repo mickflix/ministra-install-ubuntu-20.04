@@ -52,7 +52,6 @@ apt install -y nginx apache2 php8.2 php8.2-cli php8.2-common php8.2-xml php8.2-m
 systemctl stop nginx apache2
 
 # Ensure nodejs is accessible as node
-ln -sf /usr/bin/nodejs /usr/bin/node
 
 # Set PHP alternative
 update-alternatives --set php /usr/bin/php8.2
