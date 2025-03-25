@@ -51,6 +51,9 @@ apt install -y nginx apache2 php8.2 php8.2-cli php8.2-common php8.2-xml php8.2-m
 
 systemctl stop nginx apache2
 
+# Ensure nodejs is accessible as node
+ln -sf /usr/bin/nodejs /usr/bin/node
+
 # Set PHP alternative
 update-alternatives --set php /usr/bin/php8.2
 
@@ -102,6 +105,10 @@ chmod 777 /var/www/.npm
 
 cd /var/www/html/stalker_portal/server
 wget -O custom.ini $REPOSITORY/custom.ini
+
+# Ensure composer dependencies for deploy
+cd /var/www/html/stalker_portal/deploy/composer
+php composer.deploy.phar install --no-dev --no-suggest --no-interaction
 
 # Install Phing
 composer global require phing/phing
